@@ -1,0 +1,157 @@
+.background {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,
+h2,
+button,
+p,
+a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+input {
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15)
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: var(--text-and-background);
+    border-radius: 10px;
+
+    .register-header {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background-color: var(--main-color);
+        color: var(--text-and-background);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        .header-title {
+            font-size: 25px;
+        }
+
+        .header-app-name {
+            font-family: "Tilt Warp", sans-serif;
+            font-weight: 400;
+            margin-left: auto;
+        }
+    }
+
+    .register-credentials {
+
+        .top-row,
+        .bottom-row {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .register-email,
+        .register-password,
+        .register-username,
+        .register-password-confirm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            width: 100%;
+
+            h2 {
+                font-size: 22px;
+                width: 83%;
+            }
+
+            input {
+                border: none;
+                padding: 15px;
+                font-size: 15px;
+                border-radius: 10px;
+                background-color: white;
+                width: 85%;
+            }
+        }
+    }
+
+    .register-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+
+        button {
+            border: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 60px;
+            padding-right: 60px;
+            border-radius: 8px;
+            font-size: 18px;
+            background-color: var(--button-color);
+            color: var(--text-and-background);
+            transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+        }
+
+        button:hover {
+            background-color: var(--button-hover);
+            cursor: pointer;
+        }
+    }
+
+    .register-link {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-size: 18px;
+
+        a {
+            color: var(--button-hover);
+            text-decoration: none;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .register-form {
+        width: 95%;
+    }
+}
+
+@media (max-width: 650px) {
+    .register-form {
+        .register-header {
+            font-size: 10px;
+        }
+
+        .register-credentials {
+            .top-row,
+            .bottom-row {
+                display: block;
+
+                h2 {
+                    font-size: 18px;
+                }
+
+                input {
+                    font-size: 15px;
+                }
+            }
+        }
+        
+        .register-button {
+            button {
+                font-size: 16px;
+            }
+        }
+    }
+}

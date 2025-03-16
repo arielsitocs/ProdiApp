@@ -1,0 +1,40 @@
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    h1 {
+        font-family: "Tilt Warp", sans-serif;
+        font-weight: 400;
+        font-size: 50px;
+    }
+    
+}
+
+.products {
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+    grid-template-columns: 30% 30% 30%;
+}
+
+@media (max-width: 1115px) {
+    .products {
+        gap: 25px;
+        grid-template-columns: 45% 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        h1 {
+            font-size: 40px;
+        }
+    }
+
+    .products {
+        gap: 20px;
+        grid-template-columns: 90%;
+    }
+}
