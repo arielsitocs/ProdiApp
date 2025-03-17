@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 
 import user from '../../assets/user.png';
 import menu from '../../assets/menu.png';
+import searchBarDelete from '../../assets/searchBarDelete.png';
 
 import './navBar.css';
 
@@ -10,6 +11,8 @@ function NavBar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [iconOpen, setIconOpen] = useState(false);
+    const [searchBar, setSearchBar] = useState('');
+    
     const navigate = useNavigate();
 
     const handleMenuOpen = () => {
@@ -30,7 +33,8 @@ function NavBar() {
                     <h1>ProdiApp</h1>
                 </div>
                 <div className="middle">
-                    <input type="text" placeholder="Buscar por nombre de producto..." />
+                    <input type="text" placeholder="Buscar por nombre de producto..." value={searchBar} onChange={(e) => setSearchBar(e.target.value)} />
+                    <img src={searchBarDelete} alt="-" onClick={() => setSearchBar('')} />
                 </div>
                 <div className="right">
                     <h2>Bienvenido Ariel!</h2>

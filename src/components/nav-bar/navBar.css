@@ -49,17 +49,31 @@
     }
 
     .middle {
+        position: relative;
         display: flex;
         justify-content: center;
-        width: 50%;
+        width: 30%;
 
         input {
-            width: 50%;
-            padding: 12px;
+            width: 100%;
+            padding: 12px 40px 12px 15px;
             border-radius: 20px;
             border: none;
             font-family: "Poppins", sans-serif;
             font-weight: 400;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 5px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        img:hover {
+            transform: rotate(90deg);
+            cursor: pointer;
         }
 
     }
@@ -152,7 +166,8 @@
 @media (max-width: 550px) {
     .nav-bar {
         .middle {
-            input {
+            input,
+            img {
                 display: none;
             }
         }

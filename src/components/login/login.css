@@ -62,11 +62,29 @@ a {
 
             input {
                 border: none;
-                padding: 15px;
+                padding: 15px 15px 15px 45px;
                 font-size: 15px;
                 border-radius: 10px;
                 background-color: white;
                 width: 90%;
+            }
+        }
+
+        .login-email {
+            input {
+                background-image: url('../../assets/email.png');
+                background-size: 25px;
+                background-repeat: no-repeat;
+                background-position: 10px;
+            }
+        }
+
+        .login-password {
+            input {
+                background-image: url('../../assets/password.png');
+                background-size: 25px;
+                background-repeat: no-repeat;
+                background-position: 10px center;
             }
         }
     }

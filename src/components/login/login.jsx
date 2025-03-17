@@ -1,5 +1,7 @@
 import './login.css';
 
+import login from '../../assets/email.png';
+
 function Login() {
     return (
         <div className="background">
@@ -11,7 +13,7 @@ function Login() {
                 <div className="login-credentials">
                     <div className="login-email">
                         <h2>Correo Electrónico</h2>
-                        <input required type="email" placeholder='Ingresa un correo válido...' />
+                        <input required type="email" placeholder='Ingresa un correo válido...'></input>
                     </div>
                     <div className="login-password">
                         <h2>Contraseña</h2>

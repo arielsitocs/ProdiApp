@@ -53,7 +53,6 @@ input {
         .bottom-row {
             display: flex;
             justify-content: center;
-
         }
 
         .register-email,
@@ -74,13 +73,51 @@ input {
 
             input {
                 border: none;
-                padding: 15px;
+                padding: 15px 15px 15px 45px;
                 font-size: 15px;
                 border-radius: 10px;
                 background-color: white;
                 width: 85%;
             }
         }
+
+        .register-email {
+            input {
+                background-image: url('../../assets/email.png');
+                background-size: 25px;
+                background-repeat: no-repeat;
+                background-position: 10px center;
+            }
+        }
+
+        .register-username {
+            input {
+                background-image: url('../../assets/registerUser.png');
+                background-size: 25px;
+                background-repeat: no-repeat;
+                background-position: 10px center;
+            }
+        }
+
+        .register-password {
+            input {
+                background-image: url('../../assets/registerPass.png');
+                background-size: 30px;
+                background-repeat: no-repeat;
+                background-position: 10px center;
+            }
+        }
+
+        .register-password-confirm{
+            input {
+                background-image: url('../../assets/registerPassConfirm.png');
+                background-size: 30px;
+                background-repeat: no-repeat;
+                background-position: 10px center;
+            }
+        }
+
+
     }
 
     .register-button {
