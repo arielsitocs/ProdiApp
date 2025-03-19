@@ -9,7 +9,8 @@
 h2,
 button,
 p,
-a {
+a,
+input {
     font-family: "Poppins", sans-serif;
 }
 
@@ -18,7 +19,7 @@ a {
     display: flex;
     flex-direction: column;
     width: 50%; 
-    background-color: var(--text-and-background);
+    background-color: var(--secondary-background);
     border-radius: 10px;
 
     .login-header {
@@ -27,8 +28,8 @@ a {
         padding: 20px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        background-color: var(--main-color);
-        color: var(--text-and-background);
+        background: var(--main-gradient);
+        color: var(--main-text-color);
 
         .header-title {
             font-family: "Poppins", sans-serif;
@@ -55,7 +56,7 @@ a {
 
             h2 {
                 font-size: 22px;
-                color: black;
+                color: var(--main-text-color);
                 width: 89%;
                 margin-bottom: 5px;
             }
@@ -65,7 +66,8 @@ a {
                 padding: 15px 15px 15px 45px;
                 font-size: 15px;
                 border-radius: 10px;
-                background-color: white;
+                background-color: var(--main-background);
+                color: var(--main-text-color);
                 width: 90%;
             }
         }
@@ -101,13 +103,13 @@ a {
             padding: 10px 65px 10px 65px;
             border-radius: 8px;
             font-size: 18px;
-            background-color: var(--button-color) ;
+            background: var(--main-gradient) ;
             color: var(--text-and-background);
-            transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+            transition: opacity 0.1s ease-in-out;
         }
 
         button:hover {
-            background-color: var(--button-hover);
+            opacity: 0.8;
             cursor: pointer;
         }
     }
@@ -120,7 +122,7 @@ a {
         font-size: 18px;
 
         a {
-            color:  #2162d1;
+            color:  var(--main-text-color);
             text-decoration: none;
         }
     }

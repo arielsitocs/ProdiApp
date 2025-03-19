@@ -3,7 +3,7 @@
     padding: 15px;
     justify-content: space-between;
     width: 100%;
-    background-color: var(--main-color);
+    background-color: var(--secondary-background);
 
 
     .left,
@@ -11,7 +11,7 @@
     .right {
         display: flex;
         align-items: center;
-        color: var(--text-and-background);
+        color: var(--main-text-color);
 
         h1 {
             font-size: 27px;
@@ -28,6 +28,10 @@
             margin-left: 10px;
             font-family: "Tilt Warp", sans-serif;
             font-weight: 400;
+            background: var(--main-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .icon {
@@ -84,6 +88,10 @@
             font-family: "Poppins", sans-serif;
             font-weight: 300;
             margin-right: 15px;
+            background: var(--reverse-main-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         img {
@@ -94,8 +102,8 @@
 
 .menu {
     width: 260px;
-    background-color: var(--main-color);
-    color: var(--text-and-background);
+    background-color: var(--secondary-background);
+    color: var(--main-text-color);
     border-bottom-right-radius: 5px;
     position: absolute;
     transition: transform 0.3s ease-in-out;
@@ -117,15 +125,14 @@
     .menu-options {
 
         h2 {
-            color: var(--input-background);
             font-size: 15px;
             padding: 10px;
             transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
         }
 
         h2:hover {
-            background-color: var(--text-and-background);
-            color: var(--main-color);
+            background-color: var(--main-text-color);
+            color: black;
             cursor: pointer;
         }
 
@@ -166,13 +173,14 @@
 @media (max-width: 550px) {
     .nav-bar {
         .middle {
+
             input,
             img {
                 display: none;
             }
         }
     }
-   
+
     .menu {
         .menu-options {
             .mobile-search-bar {

@@ -25,8 +25,12 @@ function Product({ name, category, quantity, price, description, image }) {
                     </div>
                     <div className="data-right">
                         <div className="product-options">
-                            <img src={update} alt="-" />
-                            <img src={trash} alt="" />
+                            <div className='update'>
+                                <img src={update} alt="-" />
+                            </div>
+                            <div className='delete'>
+                                <img src={trash} alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>

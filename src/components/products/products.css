@@ -1,13 +1,19 @@
 .title {
     display: flex;
     justify-content: center;
+    width: fit-content;
+    margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
+    padding: 20px 80px 20px 80px;
+    border-radius: 10px;
+    background: var(--main-gradient);
 
     h1 {
         font-family: "Tilt Warp", sans-serif;
         font-weight: 400;
-        font-size: 50px;
+        font-size: 35px;
+        color: var(--main-text-color);
     }
     
 }
@@ -29,7 +35,7 @@
 @media (max-width: 768px) {
     .title {
         h1 {
-            font-size: 40px;
+            font-size: 30px;
         }
     }
 
