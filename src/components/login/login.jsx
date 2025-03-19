@@ -24,7 +24,7 @@ function Login() {
                     <button>INGRESAR</button>
                 </div>
                 <div className="login-link">
-                    <p>No tienes una cuenta?<a href="/register">Registrate aquí</a></p>
+                    <p>No tienes una cuenta? <a href="/register">Registrate aquí</a></p>
                 </div>
             </form>
         </div>
