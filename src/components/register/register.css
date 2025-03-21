@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 h1,
@@ -21,32 +22,32 @@ input {
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15)
 }
 
+.register-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 60%;
+    background: var(--main-gradient);
+    color: var(--main-text-color);
+    border-radius: 10px 10px 0 0;
+
+    .header-title {
+        font-size: 25px;
+    }
+
+    .header-app-name {
+        font-family: "Tilt Warp", sans-serif;
+        font-weight: 400;
+        margin-left: auto;
+    }
+}
+
 .register-form {
     display: flex;
     flex-direction: column;
     width: 60%;
     background-color: var(--secondary-background);
-    border-radius: 10px;
-
-    .register-header {
-        display: flex;
-        align-items: center;
-        padding: 20px;
-        background: var(--main-gradient);
-        color: var(--main-text-color);
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-
-        .header-title {
-            font-size: 25px;
-        }
-
-        .header-app-name {
-            font-family: "Tilt Warp", sans-serif;
-            font-weight: 400;
-            margin-left: auto;
-        }
-    }
+    border-radius: 0 0 10px 10px;
 
     .register-credentials {
 
@@ -69,7 +70,8 @@ input {
 
             h2 {
                 font-size: 22px;
-                width: 83%;
+                width: 87%;
+                margin-bottom: 5px;
                 color: var(--main-text-color);
             }
 
@@ -80,7 +82,7 @@ input {
                 border-radius: 10px;
                 color: var(--main-text-color);
                 background-color: var(--main-background);
-                width: 85%;
+                width: 90%;
             }
         }
 
@@ -130,10 +132,7 @@ input {
 
         button {
             border: none;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 60px;
-            padding-right: 60px;
+            padding: 10px 60px;
             border-radius: 8px;
             font-size: 18px;
             background: var(--main-gradient);
@@ -154,24 +153,42 @@ input {
         margin-bottom: 25px;
         font-size: 18px;
 
+        p {
+            color: var(--secondary-text-color);
+        }
+
         a {
             color: var(--main-text-color);
             text-decoration: none;
+            transition: color 0.1s ease-in-out, text-decoration 0.1s ease-in-out;
+        }
+
+        a:hover {
+            color: var(--blue-app-color);
+            text-decoration: underline;
         }
     }
 }
 
 @media (max-width: 1024px) {
+    .register-header {
+        width: 95%;
+    }
+
     .register-form {
         width: 95%;
     }
 }
 
 @media (max-width: 650px) {
-    .register-form {
-        .register-header {
-            font-size: 10px;
+    .register-header {
+        .header-app-name,
+        .header-title {
+            font-size: 22px;
         }
+    }
+
+    .register-form {
 
         .register-credentials {
             .top-row,

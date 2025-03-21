@@ -1,8 +1,13 @@
+import { useNavigate } from 'react-router';
 import './products.css';
 
 import Product from '../product/product.jsx';
 
+import add from '../../assets/add.png';
+
 function Products() {
+
+    const navigate = useNavigate();
 
     const productos = [
         {
@@ -98,9 +103,18 @@ function Products() {
     ]
 
     return (
-        <>
-            <div className="title">
-                <h1>Mis Productos</h1>
+        <div className="products-background">
+            <div className='products-bar'>
+                <div className="bar-title">
+                    <h1>Mis Productos</h1>
+                </div>
+                <div className="bar-content">
+                    <input type="text" placeholder='Buscar producto...' />
+                    <div className="content-add">
+                        <img src={add} alt="-" onClick={() => navigate('/createProduct')} />
+                    </div>
+
+                </div>
             </div>
             <main className="products">
                 {
@@ -109,7 +123,7 @@ function Products() {
                     ))
                 }
             </main>
-        </>
+        </div>
     )
 }
 

@@ -3,11 +3,11 @@ import './register.css';
 function Register() {
     return (
         <div className="background">
+            <div className="register-header">
+                <h1 className='header-title'>Registro de Usuario</h1>
+                <h1 className='header-app-name'>ProdiApp</h1>
+            </div>
             <form action="" className="register-form">
-                <div className="register-header">
-                    <h1 className='header-title'>Registro de Usuario</h1>
-                    <h1 className='header-app-name'>ProdiApp</h1>
-                </div>
                 <div className="register-credentials">
                     <div className="top-row">
                         <div className="register-email">

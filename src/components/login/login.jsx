@@ -5,11 +5,12 @@ import login from '../../assets/email.png';
 function Login() {
     return (
         <div className="background">
-            <form action="" className="login-form">
-                <div className="login-header">
+             <div className="login-header">
                     <h1 className='header-title'>Inicio de Sesión</h1>
                     <h1 className='header-app-name'>ProdiApp</h1>
-                </div>
+            </div>
+            <form action="" className="login-form">
+               
                 <div className="login-credentials">
                     <div className="login-email">
                         <h2>Correo Electrónico</h2>

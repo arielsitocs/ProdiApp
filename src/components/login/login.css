@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -14,35 +15,35 @@ input {
     font-family: "Poppins", sans-serif;
 }
 
+.login-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px 10px 0 0;
+    background: var(--main-gradient);
+    color: var(--main-text-color);
+
+    .header-title {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-size: 25px;
+    }
+
+    .header-app-name {
+        font-family: "Tilt Warp", sans-serif;
+        font-weight: 400;
+        margin-left: auto;
+    }
+}
+
 
 .login-form {
     display: flex;
     flex-direction: column;
     width: 50%; 
     background-color: var(--secondary-background);
-    border-radius: 10px;
-
-    .login-header {
-        display: flex;
-        align-items: center;
-        padding: 20px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        background: var(--main-gradient);
-        color: var(--main-text-color);
-
-        .header-title {
-            font-family: "Poppins", sans-serif;
-            font-weight: 300;
-            font-size: 25px;
-        }
-
-        .header-app-name {
-            font-family: "Tilt Warp", sans-serif;
-            font-weight: 400;
-            margin-left: auto;
-        }
-    }
+    border-radius: 0 0 10px 10px;
 
     .login-credentials {
 
@@ -57,7 +58,7 @@ input {
             h2 {
                 font-size: 22px;
                 color: var(--main-text-color);
-                width: 89%;
+                width: 88%;
                 margin-bottom: 5px;
             }
 
@@ -91,8 +92,6 @@ input {
         }
     }
 
-
-
     .login-button {
         display: flex;
         justify-content: center;
@@ -100,11 +99,11 @@ input {
 
         button {
             border: none;
-            padding: 10px 65px 10px 65px;
+            padding: 10px 75px;
             border-radius: 8px;
             font-size: 18px;
             background: var(--main-gradient) ;
-            color: var(--text-and-background);
+            color: var(--main-text-color);
             transition: opacity 0.1s ease-in-out;
         }
 
@@ -121,9 +120,19 @@ input {
         margin-bottom: 25px;
         font-size: 18px;
 
+        p {
+            color: var(--secondary-text-color);
+        }
+
         a {
             color:  var(--main-text-color);
             text-decoration: none;
+            transition: color 0.1s ease-in-out, text-decoration 0.1s ease-in-out;
+        }
+
+        a:hover {
+            color: var(--blue-app-color);
+            text-decoration: underline;
         }
     }
 }
@@ -132,20 +141,35 @@ input {
     .login-form {
         width: 95%;
     }
+
+    .login-header {
+        width: 95%;
+    }
 }
 
 @media (max-width: 490px) {
-    .login-form {
-
-        .login-header {
-            font-size: 12px;
+    .login-header {
+        .header-app-name,
+        .header-title {
+            font-size: 22px;
         }
+    }
+
+    .login-form {
+        height: 65%;
+        justify-content: center;
 
         .login-credentials {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
             .login-email,
             .login-password {
+                margin-top: 40px;
+
                 h2 {
-                    font-size: 18px;
+                    font-size: 19px;
                 }
 
                 input {
