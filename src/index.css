@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tilt+Warp&display=swap');
 
 :root {
     --main-text-color: #e4e5e7;
@@ -9,9 +9,11 @@
     --main-background: #212121;
     --secondary-background: #2f2f2f;
     --transparent-background: #2b2b2b81;
+    --darker-background: #1F1F1F;
     --red-button-background: #F44336;
     --green-button-background: #53b156;
     --main-gradient: linear-gradient(to right, #0599FF 0%, #9164FF 73%);
+    --secondary-gradient:  linear-gradient(90deg, #0599ff9d 0%, #9164ffa9 100%);
     --reverse-main-gradient: linear-gradient(to right, #9164FF 0%, #0599FF 73%);; 
 
     background-color: #141414;

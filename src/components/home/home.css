@@ -1,0 +1,271 @@
+.home {
+    padding: 40px;
+
+    .home-landing {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-image: url('../../assets/landingImage.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: color-burn;
+        /* Para permitir que funcione el opacity de la imagen de fondo */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Establece la opacidad de la imagen de fondo */
+
+        h1,
+        h2,
+        button {
+            font-family: "Konkhmer Sleokchher", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--main-text-color);
+        }
+
+        .landing-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 15px 100px 15px 100px;
+            background-color: var(--transparent-background);
+
+            img {
+                width: 120px;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                background: var(--main-gradient);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 25px;
+            }
+
+            button {
+                font-size: 16px;
+                border: none;
+                border-radius: 7px;
+                padding: 10px 60px 10px 60px;
+                background: var(--reverse-main-gradient);
+                transition: transform 0.2s ease-in-out;
+            }
+
+            button:hover {
+                cursor: pointer;
+                transform: scale(1.14);
+            }
+        }
+    }
+
+    .sell-stock {
+
+        h1,
+        button {
+            font-family: "Tilt Warp", sans-serif;
+            font-weight: 400;
+        }
+
+        .sell-stock-title {
+            margin: auto;
+            width: fit-content;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: var(--secondary-background);
+
+            h1 {
+                color: var(--main-text-color);
+            }
+        }
+
+        .sell-stock-cards {
+            display: grid;
+            flex-direction: column;
+            grid-template-columns: 45% 45%;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+
+
+            .sell,
+            .stock {
+            
+                .sell-top,
+                .stock-top {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 300px;
+                    background-size: cover;
+                    background-position: center;
+                    background-blend-mode: color-burn;
+                    /* Para permitir que funcione el opacity de la imagen de fondo */
+                    background-color: rgba(0, 0, 0, 0.3);
+                    /* Establece la opacidad de la imagen de fondo */
+
+                    h1 {
+                        background-color: var(--transparent-background);
+                        padding: 10px;
+                    }
+                }
+
+                .sell-bottom,
+                .stock-bottom {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    background-color: var(--secondary-background);
+                    padding: 10px;
+                    border-radius: 0 0 10px 10px;
+
+                    p {
+                        padding: 15px;
+                        color: var(--main-text-color);
+                        border-radius: 10px;
+                        background-color: var(--darker-background);
+                    }
+
+                    button {
+                        border: none;
+                        padding: 10px 30px;
+                        color: var(--main-text-color);
+                        font-size: 16px;
+                        margin-top: 15px;
+                        border-radius: 10px;
+                        transition: transform 0.1s ease-in-out;
+                    }
+
+                    button:hover {
+                        cursor: pointer;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .sell {
+                .sell-top {
+                    background-image: url('../../assets/sellPicture.jpg');
+
+                    h1 {
+                        color: var(--blue-app-color);
+                    }
+                }
+                .sell-bottom {
+                    button {
+                        background-color: var(--blue-app-color);
+                    }
+                }
+            }
+
+            .stock {
+                .stock-top {
+                    background-image: url('../../assets/stockPicture.jpg');
+
+                    h1 {
+                        color: var(--purple-app-color);
+                    }
+                }
+                .stock-bottom {
+                    button {
+                        background-color: var(--purple-app-color);
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .benefits {
+        h1,
+        p {
+            font-family: "Tilt Warp", sans-serif;
+            font-weight: 400;
+        }
+
+        .benefits-title {
+            margin: auto;
+            width: fit-content;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: var(--secondary-background);
+
+            h1 {
+                color: var(--main-text-color);
+            }
+        }
+
+        .benefits-content {
+            display: grid;
+            grid-template-columns: 22% 22% 22% 22%;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .benefits {
+        .benefits-content {
+            grid-template-columns: 40% 40% !important;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .sell-stock-cards {
+        grid-template-columns: 90% !important;
+    }
+}
+
+@media (max-width: 680px) {
+    .home {
+        padding: 0;
+    }
+
+    .landing-info {
+        padding: 15px 15px 15px 15px !important;
+
+        img {
+            width: 90px !important;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 40px 10px 40px !important;
+            font-size: 14px !important;
+        }
+    }
+
+    .benefits {
+        .benefits-content {
+            grid-template-columns: 70%  !important;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .benefits {
+        .benefits-content {
+            grid-template-columns: 90% !important;
+        }
+    }
+}

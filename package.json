@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "server": "npx nodemon src/database/api/server.js",
+    "server": "npx nodemon src/database/api/stores.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

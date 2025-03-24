@@ -1,13 +1,14 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
-    email: String,
-    username: String,
-    password: String
+const storeSchema = new mongoose.Schema({
+    storeEmail: String,
+    storeName: String,
+    password: String,
+    storeLogo: String
 })
 
 // Funcion que nos permite instruir al toJSON como deberia hacer la transformacion segun nuestras necesidades
-userSchema.set('toJSON', {
+storeSchema.set('toJSON', {
     transform: (document, returnedObject) => {
         returnedObject.id = returnedObject._id // Asignamos el id creado en mongoDB al objeto creado por nosotros 
         delete returnedObject._id // Borramos el campo de _id ya que se lo asignamos al objeto
@@ -15,5 +16,5 @@ userSchema.set('toJSON', {
     }
 })
 
-export const User = mongoose.model('User', userSchema)
+export const Store = mongoose.model('Store', storeSchema)
 
