@@ -64,6 +64,7 @@
     .products {
         display: grid;
         justify-content: center;
+        width: 100%;
         gap: 30px;
         grid-template-columns: 30% 30% 30%;
     }

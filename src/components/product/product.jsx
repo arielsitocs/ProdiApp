@@ -4,7 +4,13 @@ import update from '../../assets/update.png';
 import trash from '../../assets/trash.png';
 import defaultImage from '../../assets/default.png';
 
-function Product({ name, category, quantity, price, description, image }) {
+function Product({ name, category, quantity, price, description, image, setUpdateState, updateFilter, deleteProduct }) {
+
+    const handleUpdate = () => {
+        updateFilter();
+        setUpdateState(true);
+    }
+
     return (
         <div className="product">
             <div className="top-row">
@@ -26,10 +32,10 @@ function Product({ name, category, quantity, price, description, image }) {
                     <div className="data-right">
                         <div className="product-options">
                             <div className='update'>
-                                <img src={update} alt="-" />
+                                <img src={update} alt="-" onClick={handleUpdate}  />
                             </div>
                             <div className='delete'>
-                                <img src={trash} alt="" />
+                                <img src={trash} alt="-" onClick={deleteProduct} />
                             </div>
                         </div>
                     </div>

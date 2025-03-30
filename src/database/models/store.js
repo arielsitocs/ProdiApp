@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const storeSchema = new mongoose.Schema({
-    storeEmail: String,
-    storeName: String,
-    password: String,
-    storeLogo: String
+    logo: String,
+    email: String,
+    name: String,
+    password: String
 })
 
 // Funcion que nos permite instruir al toJSON como deberia hacer la transformacion segun nuestras necesidades
@@ -16,5 +16,5 @@ storeSchema.set('toJSON', {
     }
 })
 
-export const Store = mongoose.model('Store', storeSchema)
+export const Store = mongoose.model('Store', storeSchema);
 

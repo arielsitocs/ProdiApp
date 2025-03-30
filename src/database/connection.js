@@ -8,7 +8,7 @@ dotenv.config();
 export const Connection = async () => {
     try {
         await mongoose.connect(process.env.CONNECTION_URL);
-        console.log('Conexion a BD exitosa.');
+        console.log('Conexion a BD exitosa...');
     } catch (error) {
         console.error('Error al conectar a la BD: ', error);
     }

@@ -1,9 +1,12 @@
-.background {
-    width: 100%;
-    height: 100vh;
+.update-product-background {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
 }
 
 h2,
@@ -21,22 +24,21 @@ textarea {
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15)
 }
 
-.create-product-form {
+.update-product-form {
     display: flex;
     flex-direction: column;
-    width: 60%;
     background-color: var(--secondary-background);
     border-radius: 10px;
+    width: 60%;
+    position: relative;
 
-    .create-product-header {
+    .update-product-header {
         display: flex;
         align-items: center;
         padding: 20px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        background: #0599FF;
         background: var(--main-gradient);
-        background-color: var(--secondary-background);
         color: var(--main-text-color);
 
         .header-title {
@@ -54,6 +56,23 @@ textarea {
 
     .product-data {
 
+        .update-close {
+            display: flex;
+            position: absolute;
+            top: 90px;
+            right: 5px;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: var(--darker-background);
+
+            img {
+                width: 28px;
+
+            }
+        }
+
+
         .top-row,
         .middle-row,
         .bottom-row {
@@ -67,7 +86,6 @@ textarea {
         .product-quantity,
         .product-price,
         .product-description,
-        .product-stock,
         .product-picture {
             display: flex;
             flex-direction: column;
@@ -104,19 +122,10 @@ textarea {
                 resize: none;
             }
         }
-
-        .product-picture {
-            h2 {
-                width: 58%;
-            }
-
-            input {
-                width: 60%;
-            }
-        }
     }
 
-    .create-product-button {
+
+    .update-product-button {
         display: flex;
         justify-content: center;
         margin-top: 30px;
@@ -140,16 +149,23 @@ textarea {
 }
 
 @media (max-width: 1024px) {
-    .create-product-form {
+    .update-product-form {
         width: 90%;
     }
 }
 
 @media (max-width: 530px) {
-    .create-product-form {
-
+    .update-product-form {
 
         .product-data {
+
+            .update-close {
+                top: 75px;
+
+                img {
+                    width: 22px;
+                }
+            }
 
             .top-row,
             .middle-row,
@@ -163,7 +179,6 @@ textarea {
             .product-quantity,
             .product-price,
             .product-description,
-            .product-stock,
             .product-picture {
                 margin-top: 10px;
 
@@ -181,7 +196,7 @@ textarea {
             }
         }
 
-        .create-product-header {
+        .update-product-header {
 
             .header-app-name,
             .header-title {
@@ -189,7 +204,7 @@ textarea {
             }
         }
 
-        .create-product-button {
+        .update-product-button {
             button {
                 font-size: 16px;
                 padding: 10px 40px 10px 40px;

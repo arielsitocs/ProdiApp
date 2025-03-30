@@ -14,7 +14,6 @@ function NavBar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [iconOpen, setIconOpen] = useState(false);
-    const [searchBar, setSearchBar] = useState('');
 
     const navigate = useNavigate();
 
@@ -32,7 +31,7 @@ function NavBar() {
         <>
             <div className="nav-bar">
                 <div className="left">
-                    <img src={logo} alt="" className="logo" />
+                    <img src={logo} alt="" className="logo" onClick={() => navigate('/home')} />
                     <img src={menu} alt="-" className={`icon ${iconOpen ? 'open' : 'closed'}`} onClick={handleMenuOpen} />
                     <h1 onClick={() => navigate('/home')}>ProdiApp</h1>
                 </div>
@@ -60,7 +59,7 @@ function NavBar() {
             </div>
             <div className={`menu ${menuOpen ? 'open' : 'closed'}`}>
                 <div className="menu-title">
-                    <h1>Menú de Opciones</h1>
+                    <h1>Opciones de Usuario</h1>
                 </div>
                 <div className="menu-options">
                     <h2 onClick={() => navigate('/products')}>Mis Productos</h2>
