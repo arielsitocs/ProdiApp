@@ -12,6 +12,10 @@ function UpdateProducts({ state, setUpdateState, id, name, category, weight, pri
     const [newDescription, setDescription] = useState(description);
     const [newProductImage, setProductImage] = useState(productImage);
 
+    /**
+     *! Sincroniza los inputs con los hooks, ya que sin el useffect estos quedan estaticos y no se pueden cambiar !
+     *  TODO: Encontrar una posible solucion para quitar el useffect u optimizar el codigo  
+     */
     useEffect(() => {
         setName(name);
         setCategory(category);
