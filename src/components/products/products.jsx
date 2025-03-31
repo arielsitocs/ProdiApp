@@ -7,11 +7,13 @@ import add from '../../assets/add.png';
 
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
+import Alert from '../alert/alert.jsx';
 
 function Products() {
 
     const [productToupdate, setProductToUpdate] = useState(null);
     const [updateState, setUpdateState] = useState(false)
+    const [alertState, setAlertState] = useState(true);
     const [products, setProducts] = useState([]);
 
     const navigate = useNavigate();
@@ -100,6 +102,7 @@ function Products() {
                     }
                 </main>
             </div>
+            <Alert state={alertState} setAlertState={setAlertState} title={'Quieres eliminar el producto?'} />
             <UpdateProducts id={productToupdate?.id} name={productToupdate?.name} category={productToupdate?.category} weight={productToupdate?.weight} price={productToupdate?.price} description={productToupdate?.description} productImage={productToupdate?.productImage} state={updateState} setUpdateState={setUpdateState} />
         </>
     )

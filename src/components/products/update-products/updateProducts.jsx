@@ -25,7 +25,7 @@ function UpdateProducts({ state, setUpdateState, id, name, category, weight, pri
         setProductImage(productImage);
     }, [name, category, weight, price, description, productImage]);
 
-    const handleUpdate = async (e) => {
+    const handleUpdate = async () => {
         try {
             const formData = new FormData();
             formData.append("name", newName);
@@ -51,10 +51,6 @@ function UpdateProducts({ state, setUpdateState, id, name, category, weight, pri
         }
     }
 
-    const closeUpdateState = () => {
-        setUpdateState(false)
-    }
-
     // Renderiza el componente solo si state es true
     if (state)
 
@@ -67,7 +63,7 @@ function UpdateProducts({ state, setUpdateState, id, name, category, weight, pri
                     </div>
                     <div className="product-data">
                         <div className="update-close">
-                            <img src={close} alt="-" onClick={closeUpdateState} />
+                            <img src={close} alt="-" onClick={() => setUpdateState(false)}/>
                         </div>
                         <div className="top-row">
                             <div className="product-name">
