@@ -60,7 +60,8 @@ input {
         .register-email,
         .register-password,
         .register-username,
-        .register-password-confirm {
+        .register-password-confirm,
+        .register-store-logo {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -122,7 +123,16 @@ input {
             }
         }
 
+        .register-store-logo {
+            h2 {
+                width: 58%;
+            }
 
+            input {
+                width: 60%;
+                padding: 15px;
+            }
+        }
     }
 
     .register-button {

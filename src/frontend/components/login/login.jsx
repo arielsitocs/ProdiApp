@@ -18,7 +18,7 @@ function Login() {
                     </div>
                     <div className="login-password">
                         <h2>Contraseña</h2>
-                        <input required type="password" placeholder='Ingresa tu contraseña de usuario...' />
+                        <input required type="password" placeholder='Ingresa la contraseña de tu tienda...' />
                     </div>
                 </div>
                 <div className="login-button">

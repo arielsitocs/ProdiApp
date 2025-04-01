@@ -14,6 +14,7 @@ function NavBar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [iconOpen, setIconOpen] = useState(false);
+    const [logged, setLogged] = useState(false);
 
     const navigate = useNavigate();
 
@@ -53,8 +54,19 @@ function NavBar() {
                     </nav>
                 </div>
                 <div className="right">
-                    <h2>Bienvenido Ariel!</h2>
-                    <img src={ariel} alt="-" />
+
+                    {
+                        logged ?
+                            <>
+                                <h2>Bienvenido Ariel!</h2>
+                                <img src={ariel} alt="-" />
+                            </>
+                            :
+                            <>
+                                <button className="login" onClick={() => navigate('/login')}>Iniciar Sesion</button>
+                                <button className="register" onClick={() => navigate('/register')}>Registrarse</button>
+                            </>
+                    }
                 </div>
             </div>
             <div className={`menu ${menuOpen ? 'open' : 'closed'}`}>

@@ -60,14 +60,17 @@ router.put('/:id', upload.single('productImage'), async (request, response) => {
     try {
         const id = new mongoose.Types.ObjectId(request.params.id);
         const { name, category, weight, price, description, stock } = request.body;
+        let productImage;
 
-        if (name && category && weight && price && stock && request.file) {
-            
-            // Subir imagen a Backblaze B2 //
-                const productImage = await uploadFile(
+        if (name && category && weight && price && stock) {
+
+            // Subir imagen a Backblaze B2 si se subio una nueva //
+            if (request.file) {
+                productImage = await uploadFile(
                     request.file.buffer,
                     `products/${Date.now()}-${request.file.originalname}`
-                )  
+                )
+            }
 
             const updateProduct = {
                 name: name,
