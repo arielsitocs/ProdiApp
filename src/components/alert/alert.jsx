@@ -1,11 +1,23 @@
 import './alert.css';
 
-function Alert({ message, action }) {
-    return (
-        <div className="alert">
+import alert from '../../assets/alert.svg';
+import close from '../../assets/close.svg';
 
-        </div>
-    )
+function Alert({ state, setAlertState, title, action }) {
+
+    if (state)
+        return (
+            <div className="alert">
+                <img src={close} alt="" onClick={setAlertState(false)} />
+                <div className="top-row">
+                    <img src={alert} alt="-" />
+                    <h1>{title}</h1>
+                </div>
+                <div className="bottom-row">
+                    <button onClick={() => { action }}>CONFIRMAR</button>
+                    <button onClick={setAlertState(false)}>CANCELAR</button>
+                </div>
+            </div>
+        )
 }
-
-export default Alert();
+export default Alert;
