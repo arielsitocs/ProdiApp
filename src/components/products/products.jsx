@@ -37,7 +37,7 @@ function Products() {
             const product = products.find(p => p.id === id);
 
             if (product) {
-                const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`, {
                     method: 'DELETE'
                 })
 
@@ -57,7 +57,7 @@ function Products() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/products', {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products`, {
                     headers: {
                         'Content-Type': 'application/json'
                     },

@@ -36,7 +36,7 @@ function UpdateProducts({ state, setUpdateState, id, name, category, weight, pri
             formData.append("description", newDescription);
             formData.append("productImage", newProductImage);
 
-            const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`, {
                 method: 'PUT',
                 body: formData
             })

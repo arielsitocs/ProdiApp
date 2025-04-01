@@ -63,6 +63,8 @@ npm run server
 
 El proyecto estará disponible en http://localhost:5173
 
+Por motivos de seguridad, no se revela el puerto del servidor asi como la URL de mongoDB.
+
 ---
 
 🛡️ Estado del proyecto 🛡️ 
