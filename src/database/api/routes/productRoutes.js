@@ -28,17 +28,18 @@ router.get('/', async (request, response) => {
 })
 
 router.post('/', upload.single('productImage'), async (request, response) => {
-    const { name, category, weight, price, description, stock } = request.body;
+    const { name, category, weight, weightType, price, description, stock } = request.body;
 
     try {
         // Verificamos si se subio una imagen o el path sera null //
         const imagePath = request.file ? request.file.path : null;
 
-        if (name && category && weight && price && stock) {
+        if (name && category && weight && weightType && price && stock) {
             const newProduct = new Product({
                 name: name,
                 category: category,
                 weight: weight,
+                weightType: weightType,
                 price: price,
                 stock: stock,
                 description: description,
@@ -63,7 +64,7 @@ router.put('/:id', upload.single('productImage'), async (request, response) => {
     try {
         const id = new mongoose.Types.ObjectId(request.params.id);
 
-        const { name, category, weight, price, description, stock } = request.body;
+        const { name, category, weight, weightType, price, description, stock } = request.body;
 
         // Verificamos si se subio una imagen o el path sera null //
         const imagePath = request.file ? request.file.path : null;
@@ -72,6 +73,7 @@ router.put('/:id', upload.single('productImage'), async (request, response) => {
             name: name,
             category: category,
             weight: weight,
+            weightType: weightType,
             price: price,
             stock: stock,
             description: description,
