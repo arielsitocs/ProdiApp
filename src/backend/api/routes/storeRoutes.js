@@ -18,14 +18,14 @@ router.get('/', async (request, response) => {
 // Creacion de una tienda //
 router.post('/', async (request, response) => {
     try {
-        const store = request.body;
+        const { email, name, password, logo } = request.body;
 
-        if (store.email && store.name && store.password && store.logo) {
+        if (email && name && password && logo) {
             const newStore = new Store({
-                logo: store.logo,
-                email: store.email,
-                name: store.name,
-                password: store.password
+                logo: logo,
+                email: email,
+                name: name,
+                password: password
             })
 
             const savedStore = await Store.insertOne(newStore)
@@ -62,16 +62,15 @@ router.delete('/:id', async (request, response) => {
 router.put('/:id', async (request, response) => {
     try {
         const ObjectId = new mongoose.Types.ObjectId(request.params.id);
-        const store = request.body;
+        const { email, name, password, logo } = request.body;
 
-        if (store) {
-            if (store.email && store.name && store.password && store.logo) {
-                const updateStore = {
-                    logo: store.logo,
-                    email: store.email,
-                    name: store.name,
-                    password: store.password
-                }
+        if (email && name && password && logo) {
+            const newStore = new Store({
+                logo: logo,
+                email: email,
+                name: name,
+                password: password
+             })
 
                 const updatedStore = await Store.findByIdAndUpdate(ObjectId, updateStore)
                     .then(response.status(201)
@@ -80,7 +79,7 @@ router.put('/:id', async (request, response) => {
                 response.status(204).json({ error: 'Datos faltantes en la peticion' })
                 console.error('Datos faltantes en la peticion');
             }
-        }
+        
 
     } catch (error) {
         response.status(500).json(`Error al modificar la tienda: ${error}`)

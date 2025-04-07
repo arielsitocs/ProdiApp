@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const storeSchema = new mongoose.Schema({
-    logo: String,
-    email: String,
-    name: String,
-    password: String
+    logo: { type: String, required: true },
+    email: { type: String, required: true },
+    name: { type: String, required: true },
+    password: { type: String, required: true }
 })
 
 // Funcion que nos permite instruir al toJSON como deberia hacer la transformacion segun nuestras necesidades

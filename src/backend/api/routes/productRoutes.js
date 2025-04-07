@@ -20,11 +20,11 @@ router.get('/', async (request, response) => {
 })
 
 router.post('/', upload.single('productImage'), async (request, response) => {
-    const { name, category, weight, price, description, stock } = request.body;
+    const { name, category, weight, weightType, price, description, stock } = request.body;
 
     try {
 
-        if (name && category && weight && price && stock && request.file) {
+        if (name && category && weight && weightType && price && stock && request.file) {
 
             // Subir imagen a Backblaze B2 //
             const productImage = await uploadFile(
@@ -36,6 +36,7 @@ router.post('/', upload.single('productImage'), async (request, response) => {
                 name: name,
                 category: category,
                 weight: weight,
+                weightType: weightType,
                 price: price,
                 stock: stock,
                 description: description,
@@ -59,7 +60,7 @@ router.post('/', upload.single('productImage'), async (request, response) => {
 router.put('/:id', upload.single('productImage'), async (request, response) => {
     try {
         const id = new mongoose.Types.ObjectId(request.params.id);
-        const { name, category, weight, price, description, stock } = request.body;
+        const { name, category, weight, weightType, price, description, stock } = request.body;
         let productImage;
 
         if (name && category && weight && price && stock) {
@@ -76,6 +77,7 @@ router.put('/:id', upload.single('productImage'), async (request, response) => {
                 name: name,
                 category: category,
                 weight: weight,
+                weightType: weightType,
                 price: price,
                 stock: stock,
                 description: description,
