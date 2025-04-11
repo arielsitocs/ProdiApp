@@ -17,7 +17,8 @@ textarea {
 }
 
 input,
-textarea {
+textarea,
+select {
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15)
 }
 
@@ -34,9 +35,7 @@ textarea {
         padding: 20px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        background: #0599FF;
         background: var(--main-gradient);
-        background-color: var(--secondary-background);
         color: var(--main-text-color);
 
         .header-title {
@@ -64,7 +63,7 @@ textarea {
 
         .product-name,
         .product-category,
-        .product-quantity,
+        .product-weight,
         .product-price,
         .product-description,
         .product-stock,
@@ -73,17 +72,18 @@ textarea {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 30px;
+            margin-top: 25px;
             width: 100%;
 
             h2 {
-                font-size: 22px;
+                font-size: 20px;
                 width: 83%;
                 margin-bottom: 3px;
                 color: var(--main-text-color);
             }
 
-            input {
+            input,
+            select {
                 border: none;
                 padding: 15px;
                 font-size: 15px;
@@ -112,6 +112,29 @@ textarea {
 
             input {
                 width: 60%;
+            }
+        }
+
+        .product-weight {
+            display: grid;
+            grid-template-columns: 42% 42%;
+            gap: 10px;
+
+            .weight-number,
+            .weight-type {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                h2 {
+                    width: 95%;
+                }
+            }
+
+            input,
+            select {
+                width: 100%;
             }
         }
     }
@@ -148,19 +171,17 @@ textarea {
 @media (max-width: 530px) {
     .create-product-form {
 
-
         .product-data {
 
             .top-row,
             .middle-row,
             .bottom-row {
                 display: block;
-
             }
 
             .product-name,
             .product-category,
-            .product-quantity,
+            .product-weight,
             .product-price,
             .product-description,
             .product-stock,
@@ -173,10 +194,25 @@ textarea {
                 }
 
                 input,
-                textarea {
+                textarea,
+                select {
                     width: 90%;
                     padding: 12px;
                     font-size: 13px;
+                }
+            }
+
+            .product-weight {
+                grid-template-columns: 45% 45%;
+                gap: 5px;
+
+                h2 {
+                    width: 93% !important;
+                }
+
+                input,
+                select {
+                    width: 97%;
                 }
             }
         }

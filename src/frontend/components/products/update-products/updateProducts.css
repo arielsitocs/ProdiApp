@@ -82,7 +82,7 @@ textarea {
 
         .product-name,
         .product-category,
-        .product-quantity,
+        .product-weight,
         .product-price,
         .product-description,
         .product-picture {
@@ -100,7 +100,7 @@ textarea {
                 color: var(--main-text-color);
             }
 
-            input {
+            input, select {
                 border: none;
                 padding: 15px;
                 font-size: 15px;
@@ -119,6 +119,29 @@ textarea {
                 background-color: var(--main-background);
                 width: 85%;
                 resize: none;
+            }
+        }
+
+        .product-weight {
+            display: grid;
+            grid-template-columns: 42% 42%;
+            gap: 10px;
+
+            .weight-number,
+            .weight-type {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                h2 {
+                    width: 95%;
+                }
+            }
+
+            input,
+            select {
+                width: 100%;
             }
         }
     }
@@ -175,7 +198,7 @@ textarea {
 
             .product-name,
             .product-category,
-            .product-quantity,
+            .product-weight,
             .product-price,
             .product-description,
             .product-picture {
@@ -191,6 +214,20 @@ textarea {
                     width: 90%;
                     padding: 12px;
                     font-size: 13px;
+                }
+            }
+
+            .product-weight {
+                grid-template-columns: 45% 45%;
+                gap: 5px;
+
+                h2 {
+                    width: 93% !important;
+                }
+
+                input,
+                select {
+                    width: 97%;
                 }
             }
         }

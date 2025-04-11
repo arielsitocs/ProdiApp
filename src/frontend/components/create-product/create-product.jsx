@@ -12,6 +12,7 @@ function CreateProduct() {
     const [name, setName] = useState();
     const [category, setCategory] = useState();
     const [weight, setWeight] = useState();
+    const [weightType, setWeightType] = useState('kg');
     const [price, setPrice] = useState();
     const [stock, setStock] = useState();
     const [description, setDescription] = useState();
@@ -23,13 +24,14 @@ function CreateProduct() {
 
         setLoading(true);
         try {
-            
+
             const formData = new FormData();
             formData.append("name", name);
             formData.append("category", category);
             formData.append("weight", weight);
+            formData.append("weightType", weightType);
             formData.append("price", price);
-            formData.append("stock", stock)
+            formData.append("stock", stock);
             formData.append("description", description);
             formData.append("productImage", productImage);
 
@@ -71,9 +73,22 @@ function CreateProduct() {
                             </div>
                         </div>
                         <div className="middle-row">
-                            <div className="product-quantity">
-                                <h2>Peso Base</h2>
-                                <input required type="number" placeholder='Ingresa el peso por unidad (gr, ltr, etc)' onChange={e => setWeight(e.target.value)} />
+                            <div className="product-weight">
+                                <div className="weight-number">
+                                    <h2>Peso Base</h2>
+                                    <input required type="number" placeholder='Ingresa el peso por unidad (gr, ltr, etc)' onChange={e => setWeight(e.target.value)} />
+                                </div>
+                                <div className="weight-type">
+                                    <h2>Tipo de Peso</h2>
+                                    <select onChange={(e) => setWeightType(e.target.value)} className="weight-type">
+                                        <option value="kg">Kilo/s</option>
+                                        <option value="gr">Gramos</option>
+                                        <option value="lt">Litro/s</option>
+                                        <option value="ml">Mililitros</option>
+                                        <option value="oz">Onzas</option>
+                                        <option value="lb">Libras</option>
+                                    </select>
+                                </div>
                             </div>
                             <div className="product-price">
                                 <h2>Precio(CLP)</h2>
@@ -101,9 +116,9 @@ function CreateProduct() {
                 </form>
             </div>
             {
-                loading ? <Loader message={'Creando producto...'}/> : <></>
+                loading ? <Loader message={'Creando producto...'} /> : <></>
             }
-    
+
         </>
     )
 }

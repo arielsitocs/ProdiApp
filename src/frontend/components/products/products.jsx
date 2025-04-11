@@ -3,6 +3,7 @@ import './products.css';
 import Product from '../product/product.jsx';
 import UpdateProducts from './update-products/updateProducts.jsx';
 import Loader from '../loader/loader.jsx';
+import Alert from '../alert/alert.jsx';
 
 import add from '../../assets/add.png';
 
@@ -13,7 +14,6 @@ function Products() {
 
     const [productToupdate, setProductToUpdate] = useState(null);
     const [updateState, setUpdateState] = useState(false)
-    const [alertState, setAlertState] = useState(true);
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -48,12 +48,10 @@ function Products() {
 
         if (product) {
             setProductToUpdate(product);
-            console.log(`Producto encontrado: ${product.name}`)
         } else {
             console.log('No se encontro ningun producto')
         }
     }
-
 
     // Actualiza un producto en la lista para cargar el producto actualizado //
     // de inmediato en la interfaz y no tener que esperar para mostrarlo actualizado //
@@ -63,33 +61,7 @@ function Products() {
                 product.id === id ? updatedProduct : product
             )
         );
-    };
-
-    // Eliminacion de un producto //
-    // Tambien se pasa a producto por parametro //
-    const deleteProduct = async (id) => {
-        try {
-            setIsLoading(true);
-            const product = products.find(p => p.id === id);
-
-            if (product) {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`, {
-                    method: 'DELETE'
-                })
-
-                if (response.ok) {
-                    console.log(`Producto de id ${id} eliminado`);
-                    fetchProducts();
-                }
-            } else {
-                console.error('No se encontro ningun producto para eliminar');
-            }
-        } catch (error) {
-            console.error('Error al eliminar el producto: ', error);
-        } finally {
-            fetchProducts();
-        }
-    }
+    }; 
 
     return (
         <>
@@ -107,24 +79,24 @@ function Products() {
                     </div>
                 </div>
 
-                {isLoading && <Loader message={'Cargando...'} />}
-
                 <main className="products">
                     {
                         products.length > 0 ?
                             products.map(producto => (
-                                console.log(producto.productImage),
-                                <Product key={producto.id} name={producto.name} category={producto.category} quantity={producto.weight} price={producto.price} description={producto.description} image={producto.productImage} setUpdateState={setUpdateState} updateFilter={() => productUpdateFilter(producto.id)} deleteProduct={() => deleteProduct(producto.id)}></Product>
+                                <>
+                                    <Product key={producto.id} id={producto.id} name={producto.name} category={producto.category} weight={producto.weight} weightType={producto.weightType} price={producto.price} description={producto.description} image={producto.productImage} setUpdateState={setUpdateState} updateFilter={() => productUpdateFilter(producto.id)}></Product>
+                                </>
                             ))
                             :
                             <div className="no-products">
-                                <h1>Aun no tienes productos. <a href="/createProduct">agrega tus productos aqui</a></h1>
+                                <h1>Aun no tienes productos. </h1>
+                                <a href="/createProduct">agrega tus productos aqui</a>
                             </div>
                     }
                 </main>
             </div>
-            {/* <Alert state={alertState} setAlertState={setAlertState} title={'Quieres eliminar el producto?'} /> */}
-            <UpdateProducts id={productToupdate?.id} name={productToupdate?.name} category={productToupdate?.category} weight={productToupdate?.weight} price={productToupdate?.price} description={productToupdate?.description} productImage={productToupdate?.productImage} state={updateState} setUpdateState={setUpdateState}  updateProductInList={updateProductInList} />
+            {productToupdate && <UpdateProducts id={productToupdate?.id} name={productToupdate?.name} category={productToupdate?.category} weight={productToupdate?.weight} weightType={productToupdate?.weightType} price={productToupdate?.price} description={productToupdate?.description} productImage={productToupdate?.productImage} state={updateState} setUpdateState={setUpdateState} updateProductInList={updateProductInList} />}
+            {isLoading && <Loader message={'Cargando...'} />}
         </>
     )
 }

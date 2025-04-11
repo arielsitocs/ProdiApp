@@ -67,6 +67,34 @@
         width: 100%;
         gap: 30px;
         grid-template-columns: 30% 30% 30%;
+
+        .no-products {
+            grid-column: 2;
+            text-align: center;
+            margin-top: 200px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: var(--secondary-background);
+
+            h1,
+            a {
+                font-size: 26px;
+                font-weight: 700;
+            }
+
+            h1 {
+                color: var(--blue-app-color);
+            }
+
+            a {
+                color: var(--purple-app-color);
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 

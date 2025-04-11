@@ -1,0 +1,49 @@
+.alert {
+    position: fixed;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: var(--transparent-background);
+
+    .top-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        img {
+            width: 84px;
+        }
+
+        h1 {
+            color: var(--main-text-color);
+            font-size: 23px;
+        }
+    }
+
+    .bottom-row {
+        display: flex;
+        justify-content: center;
+
+        button {
+            color: var(--main-text-color);
+            min-width: 100px;
+            padding: 6px;
+            margin-right: 10px;
+            border: none;
+            transition: transform 0.1s ease-in-out, border-radius 0.2s ease-in-out;
+        }
+        
+        button:hover {
+            cursor: pointer;
+            transform: scale(1.08);
+            border-radius: 5px;
+        }
+
+        .confirm {
+            background-color: var(--green-button-background);
+        }
+
+        .cancel {
+            background-color: var(--red-button-background);
+        }
+    }
+}
